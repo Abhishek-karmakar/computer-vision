@@ -46,5 +46,12 @@ Harr Like Features.
 	- after training it detects which features are commonly found in some part of the space. 
 
 
-  
+Integral Image
+
+	- In order to evaluate if a feature is present we need to calculate the pixels and this is going to take a lot of compute power and is not very effecient , specially if this needs to be done very quickly over and over again. 
+	- To prevent this we have a hack and this is where the integral image comes in. 
+
+	- The larger the feature the more pixels value we have to add to detect a feature and if there are more features. 
+	- To solve this we will use an integral image. 
+	- integral image is a set of pixel where each pixel is a sum of all the left side and up pixels and then find the differene of the sum of the pixels of the left outer and up outer cell . This reduces the operation to only 4 calculations however big the image might be. 
 
