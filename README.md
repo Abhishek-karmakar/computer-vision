@@ -66,4 +66,18 @@ Training classifiers
 	 - Also image which are non face images also need to supplied and there has to be absolutely no faces present in them. 350000000 windows
 	 - Face Images - the algorithm should pick up a lot of features which from the face images but it should also know frm the non face images which featuers are labled as false-positive which means it might detect some facelike features from the non-face images but since they are already labled as a non-face, it would know that these images are not supposed to be detected as face detection features. 
 
+Adaboost or Adaptive Boosting.
+
+	- Using Training classifiers the algorithms understand features which detect faces and discasrd which are classified and non-face features. Even in a 24 x 24 pixel image the number of features are approximately 180,000 base features using. 
+	- We might have to calculate 180,000 for all the ~10000 faces. and when we re deteting this might take another set of 180000 features. 
+	- Adaptive Boosting helps solve this problem. 
+	- fx = A1F1(x) + A2F2(x) + A3F3(x) + ... each one of them is a feature in its own. They together become a strong classifier. 
+	- fx = Strong Classifier but the rest of them independently are weak classifier. 
+	- Lets you have 10 photos . 5 faces and 5 non faces. 
+	- We identify a featuer which is important, exaple nose bridge. So in 3 face photos it does find the feature. which are correct and it also finds a feature on a non-face photo. 
+	- The best approach is to complement it with something which will fix the weakness of one of the features 
+	- The algorithm will now pick each feature classifier and run each photo wth it and it will keep on checking all the features with the previous one till the time it had detected all of them. 
+	- The idea is to reach a high level of classification result. 
+
+	 
 
