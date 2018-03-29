@@ -55,3 +55,15 @@ Integral Image
 	- To solve this we will use an integral image. 
 	- integral image is a set of pixel where each pixel is a sum of all the left side and up pixels and then find the differene of the sum of the pixels of the left outer and up outer cell . This reduces the operation to only 4 calculations however big the image might be. 
 
+Training classifiers
+	
+	- Identify the featuers and set the features. 
+	- How to know when it is present. 
+	- Shrink the image to 24 x 24 pixel. When the image is bigger then its difficult to calculate. 
+	- One image is not enough, so its good to have a lots and lots of image to give more and more data. 
+	- If you are training your own algorithm then its also kay to mirror these images because they are completely different for the computer.
+	 - From the 9000 images we can find out what features are common for faces but only for faces. 
+	 - Also image which are non face images also need to supplied and there has to be absolutely no faces present in them. 350000000 windows
+	 - Face Images - the algorithm should pick up a lot of features which from the face images but it should also know frm the non face images which featuers are labled as false-positive which means it might detect some facelike features from the non-face images but since they are already labled as a non-face, it would know that these images are not supposed to be detected as face detection features. 
+
+
