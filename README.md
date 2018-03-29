@@ -79,5 +79,13 @@ Adaboost or Adaptive Boosting.
 	- The algorithm will now pick each feature classifier and run each photo wth it and it will keep on checking all the features with the previous one till the time it had detected all of them. 
 	- The idea is to reach a high level of classification result. 
 
-	 
+Cascading
+	
+	- Another hack to speedup the process
+	- We take a sub-window and we look for the first feature in the sub window, then we reject the sub windown and we do not even look at that sub-window anymore. 
+	- If the first feature is present then we move to the second feature and look for it. If its present then we move ahead and look for the third feature else we reject and we move forward. 
+	- In actuality in the first step it looks for Top 5 features. If none of them are present, Then in the next feature it will look for next 15 features .. then next step it will look for 25 features. 
+	- If the feature is not present in the Subwindow then it will simply reject the subwindow ompletely. 
+	- THis really speeds up the whole process. 
+	
 
