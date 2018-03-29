@@ -30,7 +30,7 @@ How the face detection happens.
  	- The size of the box also increase or decrease becase the face in the picture can be bigger or smaller. 
  	- When many boxes overlap then it understands that there is a face and it will finally highlight it.  
 
-Harr Like Features. 
+Haar-Like Features. 
 
 	- Developed by Mr. Alfred Harr. Some features. 
 	- Edge Features, Line Features & Four Rectangle feature. These features are understood by viola-jones and they were worked on. 
