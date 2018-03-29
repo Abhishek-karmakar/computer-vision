@@ -98,3 +98,4 @@ Cascading
 
 3.> Navigate to the folder where the yml file is present and run # conda env create -f virtual_platform_linux.yml 
 
+4.> The above command will create a virtual environment which can be accessed by Anaconda-Navigator using from the Upper-Left combo selection box from there just select Vitrual_environment. 
