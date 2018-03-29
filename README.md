@@ -88,14 +88,26 @@ Cascading
 	- If the feature is not present in the Subwindow then it will simply reject the subwindow ompletely. 
 	- THis really speeds up the whole process. 
 	
-##-----------------------------------------------------
 
 ## Setting up the envinroment for creating the virtual environment. 
 
-1.> Download the yml file from SDS website. http://www.superdatascience.com/wp-content/uploads/2017/09/Installations.zip and extract it to get virtual_platform_linux.yml 
+	1.> Download the yml file from SDS website. http://www.superdatascience.com/wp-content/uploads/2017/09/Installations.zip and extract it to get virtual_platform_linux.yml 
 
-2.> Download and Install Anaconda. 
+	2.> Download and Install Anaconda. 
 
-3.> Navigate to the folder where the yml file is present and run # conda env create -f virtual_platform_linux.yml 
+	3.> Navigate to the folder where the yml file is present and run # conda env create -f virtual_platform_linux.yml 
 
-4.> The above command will create a virtual environment which can be accessed by Anaconda-Navigator using from the Upper-Left combo selection box from there just select Vitrual_environment. 
+	4.> The above command will create a virtual environment which can be accessed by Anaconda-Navigator using from the Upper-Left combo selection box from there just select Vitrual_environment. 
+
+## Start the code. 
+
+	1.> Load the harrlikefeatures xml files from open-cv repositry https://github.com/opencv/opencv/tree/master/data/haarcascades
+	2.> import cv2 (open cv) and load the haarlikefeatures cascade xml files. 
+	3.> Write the rest of the code. To show the Webcam on the screen, Pass the webcam buffer to the Canvas and draw canva on the screen. 
+
+## Run the Program.
+	
+	start environment -  source activate virtual_platform
+	start python program - python face_recognition.py
+	stop environment - source deactivate
+
