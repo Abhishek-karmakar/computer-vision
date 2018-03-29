@@ -88,4 +88,13 @@ Cascading
 	- If the feature is not present in the Subwindow then it will simply reject the subwindow ompletely. 
 	- THis really speeds up the whole process. 
 	
+##-----------------------------------------------------
+
+## Setting up the envinroment for creating the virtual environment. 
+
+1.> Download the yml file from SDS website. http://www.superdatascience.com/wp-content/uploads/2017/09/Installations.zip and extract it to get virtual_platform_linux.yml 
+
+2.> Download and Install Anaconda. 
+
+3.> Navigate to the folder where the yml file is present and run # conda env create -f virtual_platform_linux.yml 
 
