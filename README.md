@@ -158,4 +158,48 @@ from ssd import build_ssd - This is the SSD library in python that we will use t
 imageio - library that we will use to process the images of the video and applying the detect function to process the image of the video and apply the detect function. pill(library can also be used)
 
 
+Step - 2 
+Write the Detect Function which will do the detection using SSD. (DeepLearning)
+
+- We are going to do a frame by frame detection. It will not do the detection on the video directly. Using imageio we will extract all the frames from the video and apply the detect functions on the frames and then reassemble 
+
+- it will take 3 arguments. image = frame, we do not need to use the grayscale, so we do not need to add gray. 
+net = neural network. 
+transform = they will transform it to riht format so that it can go into the neural network.
+
+THis function will do detect the image. It will simply return the same frame with Lable & Dog. 
+
+- get the heights and width of the frame. [0] index = height [1] = width
+
+Transform from a numpy array to a Torch Tensor. 
+we need to make 4 transformation. 
+
+frame_t will be the transformed frame, frame_t is a nummpy array after transform , now we will change it to a torch_tensor
+Neural_network SSD was trained with Green, Blue, Red - so we are need to reverse the 
+
+We need to add a Fake dimesion to the batch. Because the neural network cannot accpt a single value. thats why we need to add create a fake structure. 
+
+Convert the batch of Torch tensor of inputs into a Torch Variable. - A torch variable is a highly advanced variable which contains a Tensor and a Gradient. This torch variable will become an element of a dynamic graph which will compute very effeciently the gradient of anycomposition function during backward propagation. 
+
+after the transformation is done we will load the weights to get out pretrained model. 
+
+Step 6 : The heart of the SSD 
+Detections took all the data. 
+Tensor part of the Torch variable. 
+By taking the data output of the 
+now we will see what a tensor containts
+
+We have to make a for loop. Because we have to go to each batch's each class's each occurance. and then we check if the vallue is more than 0.4 then its present in the file else its not persent in the film. 
+
+OpenCV works with Numpy array. Now we need to add a rectangle around the object that we found out. 
+
+Since we have a pretrained model we will use that.
+Step 7 : 
+
+ we will create a object that will reflect the Neural Network itself. Thanks to the build SSD fundctn. 
+ We will get the weights from an already pre-trained SSD neural network. that will open a tensor. 
+ The Torch.load will load the tensor. 
+ We will then attribute the loadstate dict function of the function to our already pretrained to the instance of the obect. 
+
+
 
