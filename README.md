@@ -207,6 +207,14 @@ Step 8:
 Create a transformation, create a object of the Base_transform class, So that the frame can go into the neural network class. 
 We need to put the right scale for the pretrained model. note to self: figure it out later. 
 
+Step 9:
 
+Doing some object detection on a Video
+	
+	Opening the Video.
+	Get all the frames from the video One By One.
+	Apply the detect functions from the SSD nets and the Transfrom Transformation.
+	Get the processed images with the rectangel.
+	Then stich all the images together to detect the video.
 
 

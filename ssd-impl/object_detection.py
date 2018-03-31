@@ -28,9 +28,9 @@ def detect(frame, net, transform):
         j = 0
         while detections[0, i, j, 0] > 0.6: #score of occurance j of class i > 0.6
             pt = (detections[0, i, j, 1:] * scale)#the last element means from 1 to last element
-            cv2.rectangle(frame, (int(pt[0]), int(pt[1])), (int([pt2]), int(pt[3])), (255,0,0), 2) #the 4 coordinates to draw a sqare.
+            cv2.rectangle(frame, (int(pt[0]), int(pt[1])), (int(pt[2]), int(pt[3])), (255, 0, 0), 2) #the 4 coordinates to draw a square.
             #print the lable to detect 
-            cv2.putText(frame, labelmap[i - 1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_COMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+            cv2.putText(frame, labelmap[i - 1], (int(pt[0]), int(pt[1])), cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
             # we must increament the iterative variable
             j += 1
     return frame
@@ -42,3 +42,13 @@ net.load_state_dict(torch.load('ssd300_mAP_77.43_v2.pth', map_location = lambda 
 #creating the transformation
 transform = BaseTransform(net.size, (104/256.0, 117/256.0, 123/256.0))
 
+#Doing some Object Detection on a Video
+reader = imageio.get_reader('funny_dog.mp4')
+fps = reader.get_meta_data()['fps']
+writer = imageio.get_writer('output.mp4', fps = fps) #how many frames do we want.
+
+for i, frame in enumerate(reader):
+    frame = detect(frame, net.eval(), transform) #net.eval is the neural network net from which we get the output Y.
+    writer.append_data(frame)
+    print(i)
+writer.close()
