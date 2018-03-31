@@ -201,5 +201,12 @@ Step 7 :
  The Torch.load will load the tensor. 
  We will then attribute the loadstate dict function of the function to our already pretrained to the instance of the obect. 
 
+ We created the neural network
+
+Step 8: 
+Create a transformation, create a object of the Base_transform class, So that the frame can go into the neural network class. 
+We need to put the right scale for the pretrained model. note to self: figure it out later. 
+
+
 
 

@@ -40,3 +40,5 @@ net = build_ssd('test')#just pass the face, trained or untrained, a ssd neural n
 net.load_state_dict(torch.load('ssd300_mAP_77.43_v2.pth', map_location = lambda storage, loc: storage)) #torch.load 
     
 #creating the transformation
+transform = BaseTransform(net.size, (104/256.0, 117/256.0, 123/256.0))
+
