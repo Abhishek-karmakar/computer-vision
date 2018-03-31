@@ -119,3 +119,43 @@ Run the Program.
 	- The scale problem. 
 
 	How is SSD different - In this kind of prediction there is a way of 
+
+
+The Coding behind the SSD 
+
+	- data - forlder that contain the classes base transform that will do the required transformations so that the input images will be compatible with the neural network. 
+
+	- funnydog is the video of a dog that we want to detect. 
+	- Layers - is another folder that contains some other tools for detection and multibox part of the SSD. 
+	- ObjectDetectionCommented - 
+	- ObjectDetectionNoComment
+	- SSD.py - the architecture of the SSD multibox detection model. We will not implement this. If we implement the whole model then we will miss what is at the heart. After watching the 
+	- the pth file we will be loading to use the pretrained model. This contains the weights of the already pretrained model. 
+
+	We will be loading this file with Torch. torch.load will open a tensor, a Tensor that will already contain the weights of this model. Then with the mapping of a dictionary we will transfer these weights to the model that we implement. 
+
+	the pth file containts the weights of a already pre-trained model. 
+
+
+Libraries that we will use for object detection using SSD. 
+
+
+Step - 1 - Import all the libraries. 
+
+Torch - The torch library contains pytorch, to build a neural network and build computer vision. PyTorch contains DynamicGraphs, we are able to compute very effeciently the gradients of compsition functions in backward propagation. We have to update the weights of these gradient of these compsition functions to update the weights of the target and the prediction. 
+Dynamic graphs is a highly advanced graph structure which allows computation at a very optimized way.
+
+Autograd - module responsible for gradient descent , we are using the Variable class which will be used to convert the tensors into the torch variable which will contain both a Tensor and a Variable and and then the Torch variable containing a Tensor and the Variable will be one element of the graph. 
+
+CV2 - to draw some rectangles around the object. The object detection will not happen with openCV harrcascade. they will be based on SSD. 
+
+from data import BaseTransform, VOC_CLASSES as labelmap - Data is a folder in which these classes are present. BaseTransform is the class which will do all the transformation from input images will be compatible with the neural network. When we feed the neural network with the images we need a way to transform to these classes. 
+
+VOC_Classes is the dictionary which will do encoding of the classes. Plants = one class, dogs = another class.  
+
+from ssd import build_ssd - This is the SSD library in python that we will use to build the SSD object detection model. build_ssd 
+
+imageio - library that we will use to process the images of the video and applying the detect function to process the image of the video and apply the detect function. pill(library can also be used)
+
+
+
